@@ -6,10 +6,9 @@ class Search extends Component {
     const { searchResults, searchComponent, status } = this.props
     let results
     results = searchResults
-    
-   function onSearchComponent(e){
-     searchComponent(e)
-    }
+    function onSearchComponent(e){
+      searchComponent(e)
+     }
 
     function changeStatus(b,e) {
       status(b,e)
@@ -26,7 +25,7 @@ class Search extends Component {
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-              {results && results.map((book)=> (
+              {(results && results.length > 0) && results.map((book)=> (
                   <li key={book.id}>
                       <div className="book">
                         <div className="book-top">

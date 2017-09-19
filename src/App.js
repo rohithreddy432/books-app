@@ -13,15 +13,15 @@ class BooksApp extends React.Component {
   }
 
   componentDidMount() {
-    BooksAPI.getAll().then((books) =>{
-          return this.setState({books})
-    }).catch((err)=> console.log(err))
+    BooksAPI.getAll()
+    .then((books) =>this.setState({books}))
+    .catch((err)=> console.log(err))
 
   }
   searchResult(e) {
-      BooksAPI.search(e).then((searchResults) => {
-            return this.setState({searchResults})
-      }).catch((err)=> console.log(err))
+      BooksAPI.search(e)
+      .then((searchResults) => this.setState({searchResults}))
+      .catch((err)=> this.setState({}))
     }
 
   statusChange(b,e) {

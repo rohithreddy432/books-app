@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ReadBooks from './ReadBooks';
-import Reading from './Reading';
-import WantToRead from './WantedBooks';
+import Books from './Books';
 
 class BooksList extends Component {
 
@@ -37,9 +35,9 @@ class BooksList extends Component {
            <h1>MyReads</h1>
          </div>
          <div className="list-books-content">
-            <Reading readingBooks={currentlyReading} statusUpdate={(book,query) => statusChange(book,query)} />
-            <WantToRead wanted={wantToRead} statusUpdate={(book,query) => statusChange(book,query)} />
-            <ReadBooks read={readBooks} statusUpdate={(book,query) => statusChange(book,query)} />
+            <Books readingBooks={currentlyReading} statusUpdate={(book,query) => statusChange(book,query)} />
+            <Books readingBooks={wantToRead} statusUpdate={(book,query) => statusChange(book,query)} />
+            <Books readingBooks={readBooks} statusUpdate={(book,query) => statusChange(book,query)} />
          </div>
          <div className="open-search">
            <Link to="/search"/>
